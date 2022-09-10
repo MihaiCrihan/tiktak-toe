@@ -9,19 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const table = document.querySelector('.table')
     const playerNr = document.querySelector('.player')
-    console.log(win);
 
     for (const rows of matrix) {
         const row = document.createElement('div')
         row.classList.add('row')
         table.appendChild(row)
+
         for (const cells in rows) {
             const cell = document.createElement('div')
             cell.classList.add('cell')
             row.appendChild(cell)
-
+            
             cell.addEventListener('click', (e) => {
-
                 if (!rows[cells]) {
                     playerTurn = !playerTurn
 
@@ -36,15 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const temp = []
-                    // for (let i = 0; i < matrix.length; i++) {
-                    //     for (let j = 0; j < matrix[i].length; j++) {
-                    //         temp.push(matrix[i][j])
-                    //     }
-                    // }
-
                     matrix.map(elem => elem.map(cell => temp.push(cell)))
-
-                    console.log(temp);
 
                     const checkWinner = (number) => {
                         if (
